@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+/* In dit gridsysteem behoort de paddings en de border van een html element tot de vis breedte van dit html element. Hiervoor dient de onderstaande code.
+Het zegt ook dat we alles binnen { en } zullen toepassen */
+* {
+    box-sizing: border-box;
+ }
+
+/* Grid wrapper gaat dus om de wrapper (=volledige breedte). In ons geval fixed en de website is dus niet responsive */
+/* Een wrapper omsluit de volledige breedte vh browservenster. Heeft geen marges en paddings. Een wrapper identicifeert ook een unieke
+component or organisme binnen de lay-out van een webpagina, bv een header. Een wrapper bevat slechts één container en groepeert 
+gelijksoortige informatie in rijen. Desktop = 1140px */
+.grid__wrapper {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container is een html element met een absolute of relatieve breedte en staat gecentreerd in een grid. een container voor een wrapper.
+kan linkse en rechtse padding bevatten*/
+
+/* margin 0 auto wilt zeggen dat de top en bodem 0 zijn en dat de container centraal wordt geplaatst qua left en right */
+
+/* display block wilt zeggen dat een element getoond wordt als een block. Met witruimte erboven en eronder en het staat geen html elementen ernaast toe,
+tenzij anders aangegeven door bv floating. Inline is naast elkaar op dezelfde lijn. block-inline is naast elkaar in blokken*/
+
+.grid__container {
+    display: block;
+    width: 1140px;
+    margin: auto;
+    /*  tussen tekens omdat afbeelding automatisch centreerde */
+    /* padding 12px weg omdat de afbeelding niet links stond*/
+}
+
+/* Een row neemt de beschikbare ruimte in van zijn container en groepeert gelijksoortige inhoud. Een row bevat een verzameling van kolommen.
+Omdat deze kolommen zwevend zullen geplaatst worden via de eigenschap float moet de ouder de minieme clearfix techniek bevatten. Dit doen we ook bij
+container en wrapper zodat we een flexibel systeem krijgen */
+
+/* een row kan een negatieve linker- en rechtermarge bevatten gelijk aan een halve gutter. (gutter = ruimte tussen kolommen). Nested rows, dus rij in een rij
+moeten steeds dezelfde negatieve marges bevatten */ 
+
+/* float property zegt of een element moet zweven. Een absoluut gepositioneerd element negeert float. elementen na een gefloat element gaan 
+er rond flowen. Als je dit wilt voorkomen moet je clearfix gebruiken (w3s) */
+
+/* clear wordt gebruikt om het gedrag van de floating elements te controleren. Het zegt aan welke kanten van een elementen een zwevend element wel en niet is toegestaan om te floaten. 
+een clearFIX zorgt ervoor dat elementen die groter zijn dan het element waar het in staat, en wanneer het zweeft, het niet buiten het element komt. 
+Met de oude overflow:: auto clearfix werkt het zolang je je padding en margin erop afstemt. Het de nieuwe is dit probleem weg */
+
+.grid__row {
+    display: block;
+    margin: 0 -12px;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* :after selector inserts something after the content of each selected element. Use the content property to specify the content to insert. */
+/* clear: both is niks aan de zijkanten*/
+/* display: table wilt zeggen dat het zich moet gedragen als een table element. Dwz dat het layout algoritme is als een tabel */
+
+.grid__wrapper:after,
+.grid__container:after,
+.grid__row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* een column is een html-element waarin inhoud wordt geplaatst. Deze inhoud kan over meerdere kolommen verspreid worden.
+Een comun wordt links-zwevend gepositioneerd en bevat een linker- en rechterpadding gelijk aan een halve gutter */
+/* position: relative wilt zeggen dat het relatief naar zijn eigen positie geplaatst is. dwz 20px is 20px van zijn normale positie af */ 
+/* als het tussen vierkante haakjes staat zegt het class-alles = alles wat met 'grid_column-' begint */
+
+[class*="grid__column-"] {
+    position: relative;
+    float: left;
+    padding: 0 12px;
+}
+
+/* ons grid bestaat uit 12 kolommen. Ieder op zoveel procent van het totale beeld. het cijfer duidt de selector aan. */
+
+.grid__column-12 { width: 100%; }
+.grid__column-11 { width: 91.666666666667%; }
+.grid__column-10 { width: 83.333333333333%; }
+.grid__column-9 {  width: 75%; }
+.grid__column-8 {  width: 66.666666666667%; }
+
+.grid__column-7 {  width: 58.333333333333%; }
+.grid__column-6 {  width: 50%; }
+.grid__column-5 {  width: 41.666666666667%; }
+.grid__column-4 {  width: 33.333333333333%; }
+.grid__column-3 {  width: 25%; }
+.grid__column-2 {  width: 16.666666666667%; }
+.grid__column-1 {  width: 8.333333333333%; }
+
+/* Om een kolom niet te laten beginnen op zijn originele positie in horizontale richting maken we gebruik van een offset. als een element bv 8 kolommen 
+is dan definieren we een offset van 2 kolommen. dus de linkermarge uitgedrukt in percentage. */ 
+
+/*
+[class*="grid__offset-"] {
+    position: relative;
+    float: left;
+    padding: 0 12px;
+}
+
+
+.grid__offset-12 { margin-left: 100%; }
+.grid__offset-11 { margin-left: 91.666666666667%; }
+.grid__offset-10 { margin-left: 83.333333333333%; }
+.grid__offset-9 {  margin-left: 75%; }
+.grid__offset-8 {  margin-left: 66.666666666667%; }
+.grid__offset-7 {  margin-left: 58.333333333333%; }
+.grid__offset-6 {  margin-left: 50%; }
+.grid__offset-5 {  margin-left: 41.666666666667%; }
+.grid__offset-4 {  margin-left: 33.333333333333%; }
+.grid__offset-3 {  margin-left: 25%; }
+.grid__offset-2 {  margin-left: 16.666666666667%; }
+.grid__offset-1 {  margin-left: 8.333333333333%; }
+*/ 

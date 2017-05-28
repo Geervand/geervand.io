@@ -1,0 +1,99 @@
+<!-- DOCTYPE declaratie = welke html versie -->
+<!DOCTYPE html>
+<!-- dir = leesrichting - left to right. lang = language is de primaire taal. -->
+<html dir="ltr" lang="nl-be">
+
+<head>
+    <!-- definitie set karakters-->
+    <meta charset="UTF-8">
+    <!-- Het meta element X-UA-Compatible laat toe op een "rendering enginge" (= een layout-enginge
+     = een software die web- en opmaakinformatie weergeeft op het beeldscherm van een computer.) te definiëren. We forceren IE om de meeste up-to-date instelling te gebruiken via
+     de instelling IE=edge. Daarna stellen we het eventuele gebruik van Google Chrome Frame in via de instelling chrome =1. Het moet na de characterset worden gedefinieerd
+     Het is belangrijk om in de juiste volgorde te definiëren in head. Als je niets definieerd gaat hij automatisch detecteren en dan kan hij het verkeerde detecteren. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+
+<!-- In de titel zet je de belangrijkste SEO tags -->
+    <title>GH | Contact</title>
+
+    <!-- Andere SEO tags -->
+    <meta name="description" content="Een pagina over een grafisch bureau ifv een opdracht van webdesign II. (ArteveldeHogeschool)">
+     <!-- in max. 8 kernwoorden (anders nadelig seo) vertellen over de website.-->
+    <meta name="keywords" content="HTML5, CSS3, GDM, WebdesignII, Geertje, grafisch, portfolio, fotografie">
+    <meta name="author" content="Arteveldehogeschool - Bachelor in de grafische en digitale media | MMP">
+    <meta name="copyright" content="Copyright 2010-14 Arteveldehogeschool. All Rights Reserved.">
+
+<!-- Viewport wordt gebruikt om in te stellen hoe de webpagina visueel verkleind moet worden zodat deze past in de breedte van bv een tablet of gsm. We stellen meestal 
+width=device-width. Dwz dat de breedte wordt ingesteld op de breedte van het apparaat. De initial-scale eigenschap bepaalt het zoomniveau wanneer de pagina wordt geleiden. 
+We vermelden deze NIET omdat dit bugs veroorzaakt op iOS tijdens de rotatie van het toestel. Maximum-scale gebruiken we ook niet omdat deze eigenschappen invloed 
+hebben op de voorkeuren van de gebruiker op hun persoonlijk toestel. -->
+    <meta name="viewport" content="width=device-width">
+
+<!-- linken van je css bestanden aan je html -->
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+        <div class="containerheader">
+            <nav>
+                <ul>
+                    <li><a href="overons.html">Over ons</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="diensten.html">Diensten</a></li>
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+</header>
+
+    <div class="grid__wrapper">
+        <div class="grid__container">
+            <div class="grid__row">
+
+                <div class="grid__column-6">
+                     <div class="container">
+                        <form action="/action_page.php">
+                            <input type="text" id="vnaam" name="voornaam" placeholder="Uw voornaam..">
+                            <input type="text" id="anam" name="achternaam" placeholder="Uw achternaam..">
+                             <input type="text" id="email" name="emailadres" placeholder="Uw e-mailadres..">
+                            <textarea id="subject" name="subject" placeholder="Stel hier uw vraag.." style="height:200px"></textarea>
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
+                </div>
+
+                   
+                        
+                    
+                <div class="grid__column-4">    
+                        
+                        <p>Geertje van der Linden <br>
+                        0484363955<br>
+                        Nijverheidsstraat 70 bus 6 <br>
+                        9420 Mere </p>
+                        <a href="https://www.facebook.com/GGeerriieekkee" target="_blank">
+                                <img src="assets/fblink.png" alt="facebook link">
+                        </a>
+
+                    </div>
+                </div>
+            
+            </div>
+        </div>    
+    </div>
+
+<footer>
+    <p class="tekstfooter">Geertje van der Linden, 2017.</p>
+</footer>  
+
+
+
+
+    
+
+</body>
+</html>
